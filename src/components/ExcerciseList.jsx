@@ -1,20 +1,23 @@
-import {StyleSheet, View, FlatList, Text} from 'react-native';
+import {StyleSheet, FlatList, Text, Pressable} from 'react-native';
+import {Link} from "expo-router";
 
 const ExcerciseItem = ({item}) => (
-    <View style={styles.excerciseContainer}>
-        <Text style={styles.exerciseName}>
-            {item.name}
-        </Text>
-        <Text style={styles.exerciseSubtitle}>
-            <Text style={styles.subValue}>
-                {item.muscle}
+    <Link href={`/${item.name}`} asChild>
+        <Pressable style={styles.excerciseContainer}>
+            <Text style={styles.exerciseName}>
+                {item.name}
             </Text>
-            {" | "}
-            <Text style={styles.subValue}>
-                Equipment: {item.equipment}
+            <Text style={styles.exerciseSubtitle}>
+                <Text style={styles.subValue}>
+                    {item.muscle}
+                </Text>
+                {" | "}
+                <Text style={styles.subValue}>
+                    Equipment: {item.equipment}
+                </Text>
             </Text>
-        </Text>
-    </View>
+        </Pressable>
+    </Link>
 )
 
 
