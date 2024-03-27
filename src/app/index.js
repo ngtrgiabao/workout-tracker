@@ -1,12 +1,12 @@
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, View} from 'react-native';
-import exercises from "./assets/data/exercises.json"
-import ExcerciseList from "./src/components/ExcerciseList";
+import excercises from "../../assets/data/exercises.json";
+import ExcerciseList from "../components/ExcerciseList";
 
 export default function App() {
     return (
         <View style={styles.container}>
-            <ExcerciseList exercises={exercises}/>
+            <ExcerciseList exercises={excercises}/>
             <StatusBar style="auto"/>
         </View>
     );
@@ -15,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ccc',
+        backgroundColor: '#fff',
         justifyContent: 'center',
         padding: 10
     },
